@@ -1,0 +1,93 @@
+/* Article */
+.article {
+    @include for-phone-only {   
+        width: 100%;
+    }
+
+    @include for-tablet-only {   
+        width: 100%;
+    }
+    width: 80%;
+    margin: 0 auto 40px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    .article__title {
+        background-color: $ligth-grey;
+        text-align: center;
+        padding: 20px;
+
+        .article__h1 {
+            @include fontSize(22px);
+            color: $dark-grey;
+            letter-spacing: 1px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .breadcrumb {
+            @include flx(justify-content, center);
+            align-items: center;
+
+            .breadcrumb__link {
+                @include fontSize(12px);
+                text-decoration: none;
+                color: $dark-grey;
+                transition: all .4s;
+
+                &:hover {
+                    color: $purple;
+                }
+            }
+
+            .breadcrumb__img {
+                width: 11px;
+                margin: 8px;
+            }
+        }
+    }
+
+    .article__img {
+        margin-bottom: 26px;
+        width: 100%;
+    }
+
+    .article__details {
+       @include flx(justify-content, center); // Mixin justify-content, display: flex;
+       align-items: center;
+       
+       .article__date {
+          margin: 0 10px;
+          @include fontSize(12px);
+          font-style: italic; 
+       }
+
+       .article__tag {
+          @include fontSize(14px);
+          padding: 5px 7px;
+          color: $purple; 
+          border: 1px solid $purple;
+          margin: 0 10px;
+       }
+    }
+
+    .article__content {
+        font-weight: 100;
+        @include fontSize(14px);
+        color: $dark-grey;
+        padding: 10px;
+
+        @include for-phone-only {
+            padding-right: 40px;
+            padding-left: 40px;
+            padding-top: 20px;
+        }
+
+        @include for-tablet-only {
+            padding-right: 40px;
+            padding-left: 40px;
+            padding-top: 20px;
+        }
+    }
+}
