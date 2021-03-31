@@ -1,9 +1,14 @@
+@import './mixins';
+@import './functions';
+@import './colors';
+@import './vars';
+
 .header {
     font-family: Arial, Helvetica, sans-serif;
 
     .header__logo {
         text-align: center;
-        
+
         .header__img {
             max-width: 350px;
         }
@@ -12,48 +17,49 @@
     .menu {
         .menu__list {
             @include flx(justify-content, center);
-            border-top: 1px solid $ligth-grey;
+            border-top   : 1px solid $ligth-grey;
             border-bottom: 1px solid $ligth-grey;
-            margin-left: auto;
-            margin-right: auto;
+            margin-left  : auto;
+            margin-right : auto;
 
             @include for-phone-only {
-                width: 100%;
-                padding: 15px 0;
+                width    : 100%;
+                padding  : 15px 0;
                 flex-wrap: wrap;
             }
 
             @include for-tablet-only {
-                width: 100%;
+                width  : 100%;
                 padding: 20px 0;
             }
 
             @include for-desktop-only {
-                width: 80%;
+                width  : 80%;
                 padding: 20px 0;
             }
 
             .menu__links {
                 position: relative;
+
                 @include for-phone-only {
                     padding: 5px 0;
                 }
 
                 &:not(:last-child)::after {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    right: -3px;
-                    margin: auto;
-                    height: 15px;
-                    width: 1px;
+                    content         : "";
+                    position        : absolute;
+                    top             : 0;
+                    bottom          : 0;
+                    right           : -3px;
+                    margin          : auto;
+                    height          : 15px;
+                    width           : 1px;
                     background-color: $ligth-grey;
                 }
 
                 .menu__link {
-                    padding: 0 25px;
-                    color: $dark-grey;
+                    padding   : 0 25px;
+                    color     : $dark-grey;
                     transition: all .4s;
 
                     &:hover {
