@@ -1,0 +1,45 @@
+@import './vars';
+
+// $directions iteração
+@each $direction in $directions {
+    %no-margin-#{$direction} { margin-#{$direction}: 0;}
+    %default-margin-#{direction} {margin-#{$direction}: $layout-margin-size;}
+    %double-margin-#{direction} {margin-#{$direction}: $layout-margin-size * 2;}
+    %half-margin-#{direction} {margin-#{$direction}: $layout-margin-size / 2;}
+}
+
+// Condicional collection
+@mixin theme-collection($half-post: true) {
+    @include for-phone-only() {
+        width: $full-width;
+    }
+
+    @if $half-post {
+        width: $half-width;
+    } @else {
+        width: $full-width;
+    }
+}
+
+@mixin font-collection($half-title: true) {
+    @include for-phone-only() {
+        @include fontSize(16px);
+    } 
+
+    @if $half-title {
+        @include fontSize(18px);
+    } @else {
+        @include fontSize(22px);
+    }
+}
+
+// iteraction while 
+$x: 1; // count
+@while $x < 5 {
+    .contact__p-#{$x} {
+        @include fontSize(40px / $x);
+        padding-top: 5px * $x;
+    }
+
+    $x: $x + 1;
+}

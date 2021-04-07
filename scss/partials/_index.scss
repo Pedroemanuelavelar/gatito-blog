@@ -1,14 +1,4 @@
-/// globais
-$directions: top, bottom, left, right; // expression
-$layout-margin-size: 10px;
-
-// $directions iteração
-@each $direction in $directions {
-    %no-margin-#{$direction} { margin-#{$direction}: 0;}
-    %default-margin-#{direction} {margin-#{$direction}: $layout-margin-size;}
-    %double-margin-#{direction} {margin-#{$direction}: $layout-margin-size * 2;}
-    %half-margin-#{direction} {margin-#{$direction}: $layout-margin-size / 2;}
-}
+/* @import './vars'; */
 
 /* Main */
 .main {
@@ -57,12 +47,13 @@ $layout-margin-size: 10px;
             .main__subtitle {
                 @include flx(justify-content, center);
                 align-items: center;
-                @extend %default-margin-top,
-                %double-margin-bottom;
-/*                 margin-top   : 10px;
-                margin-bottom: 20px; */
+                /* @extend %default-margin-top;
+                @extend %double-margin-bottom; */
+                margin-top   : 10px;
+                margin-bottom: 20px;
 
                 .main__date {
+                    /* @extend %no-margin-top, %no-margin-bottom, %default-margin-left, %default-margin-right; */
                     margin: 0 10px;
                     @include fontSize(12px);
                     font-style: italic;
@@ -74,6 +65,7 @@ $layout-margin-size: 10px;
                     color  : $purple;
                     border : 1px solid $purple;
                     margin : 0 10px;
+                    /* @extend %no-margin-top, %no-margin-bottom, %default-margin-left, %default-margin-right; */
                 }
             }
 

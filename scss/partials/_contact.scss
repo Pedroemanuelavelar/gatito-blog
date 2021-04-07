@@ -1,0 +1,59 @@
+@import './mixins';
+
+.contact {
+    @include flx(justify-content, center);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    /* @extend %double-margin-top; *//* margin-top: 20px; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+
+    @include for-phone-only {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    @include for-tablet-only {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact__figure {
+        width: 50%;
+
+        @include for-phone-only {
+            width: 100%;
+        }
+
+        .contact__img {
+            width: 100%;
+
+            @include for-phone-only {
+                max-width: 100%;
+                margin-left: 0px;
+            }
+        }
+    }
+
+    .contact__info {
+        width: 40%;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+
+        @include for-phone-only {
+            width: 86%;
+            text-align: left;
+            margin: 20px 0 20px 0;
+        }
+
+        @include for-tablet-only {
+            margin: 40px 0 40px 0;
+            width: 55%;
+        }
+    }
+
+}

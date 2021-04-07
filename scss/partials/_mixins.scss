@@ -7,7 +7,7 @@
 
 @mixin flx($property, $jty-cnt) { // jty-cnt => justify-content
     display: flex;
-    #{$property}: $jty-cnt;
+    #{$property}: $jty-cnt; // Interpolação
 }
 
 /// Mobile
@@ -28,3 +28,4 @@
 @mixin fontSize($size) {
     font-size: calculateRem($size);
 }
+

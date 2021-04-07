@@ -32,11 +32,12 @@
 
             .breadcrumb__link {
                 @include fontSize(12px);
-                text-decoration: none;
+                @extend %no-decoration;/* text-decoration: none; */
                 color: $dark-grey;
                 transition: all .4s;
 
                 &:hover {
+                    @extend %u-decoration;
                     color: $purple;
                 }
             }
@@ -49,6 +50,7 @@
     }
 
     .article__img {
+        /* @extend %double-margin-bottom; */
         margin-bottom: 26px;
         width: 100%;
     }
@@ -58,6 +60,7 @@
        align-items: center;
        
        .article__date {
+          /* @extend %no-margin-top, %no-margin-bottom, %default-margin-left, %default-margin-right; */
           margin: 0 10px;
           @include fontSize(12px);
           font-style: italic; 
