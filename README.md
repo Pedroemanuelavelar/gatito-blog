@@ -1,11 +1,14 @@
 # Gatito Blog
 
-![image](.github/images/gatito.gif)
-
 Para rodar o sass use o seguinte comando:
 ```bash
 $ sass --watch scss/style.scss:css/style.css
 ```
+
+## Resultado
+
+![image](.github/images/gatito.gif)
+
 <br>
 <br>
 
